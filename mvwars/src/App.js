@@ -33,11 +33,11 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      appstate: "intro",
+      appstate: "event",
       playerHP:50,
       monster: {taunts:[]},
       taunt:"",
-      URL: '',
+      URL: 'https://quizlet.com/11132713/civil-war-vocab-flash-cards/',
       quizletSet: require("./dummyQuizlet").default,
       monsterHP: 20,
       monsterAT: 20,
@@ -78,7 +78,8 @@ export default class App extends Component {
 }
 
   generateMonster(){
-    axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/monsters')
+    //axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/monsters')
+    axios.get('localhost:5000/monsters')
     .then(data => {
       this.setState({monster: data.data,
         monsterIndex: Math.floor(Math.random() * (monsters.length)),
@@ -124,7 +125,8 @@ export default class App extends Component {
     //have it log to console, then check dev tools to see if it worked
     //nothing will show up in UI, this is just for you to test server, don't commit to main branch
     this.generateQuestion();
-    axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/monsters')
+    //axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/monsters')
+    axios.get('localhost:5000/monsters')
     .then(data => {
       this.setState({monster: data.data,
                     monsterHP: data.data.hp,
@@ -153,7 +155,8 @@ export default class App extends Component {
     event.preventDefault();
     this.setState({ appstate: "event" })
     //get quizlet from user
-    axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/quizlet?url='+this.state.URL)
+    //axios.get('http://ec2-13-57-189-172.us-west-1.compute.amazonaws.com:5000/quizlet?url='+this.state.URL)
+    axios.get('localhost:5000/quizlet?url='+this.state.URL)
     .then(data => {
       this.setState({quizletSet: data.data,});
       console.log(data);
