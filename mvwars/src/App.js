@@ -348,7 +348,7 @@ export default class App extends Component {
             <div><img className='image' src={background} /></div>
             <div className="event-container">
               <h2 >{this.state.event.Title}</h2>
-              <div >{this.state.event.Description}</div>
+              <div className = "eventText">{this.state.event.Description}</div>
               <br></br>
               <br></br>
 

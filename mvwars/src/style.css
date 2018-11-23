@@ -74,7 +74,10 @@ button:hover{
 }
 
 h2{
-  font-size:20px;
+  font-size:2.7vh;
+}
+.eventText{
+  font-size:1.7vh;
 }
 .event-container {
   text-align: center;
