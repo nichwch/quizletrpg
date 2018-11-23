@@ -12,9 +12,6 @@
   text-align: center;
 }
 
-.monster-container {
-  margin-top: 10%;
-}
 
 button{
   background-color: white;
@@ -33,11 +30,12 @@ button:hover{
 
 .image {
   border:1px solid black;
-  width:20%;
-  height:auto;
+  display:block;
+  width:150px;
+  height:150px;
   margin-top:20px;
-  margin-left:40%;
-  margin-right:40%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 
@@ -48,7 +46,7 @@ button:hover{
 
 .progress-bar{
   position:relative;
-  height:20px;
+  height:10px;
   width:300px;
   margin-left: auto;
   margin-right: auto;
